@@ -13,7 +13,7 @@ Begin by starting a new session and entering your google credentials.
 
     session = MarketSession()
     session.login("user@gmail.com", "password")
-    
+
 Search for "bankdroid" on the market and print the first result
 
     results = session.searchApp("bankdroid")
@@ -47,7 +47,7 @@ Print the last two comments for the app
 
     results = session.getComments(app["id"])
     pprint(results[:2])
-    
+
 and you get:
 
     [{'authorid': u'02028671193556683049',
@@ -60,7 +60,7 @@ and you get:
       'creationtime': 1299101108485L,
       'rating': 5L,
       'text': u'This is awesome. Keep up the good work!'}]
-    
+
 Download and save the first screenshot to disk:
 
     data = session.getImage(app["id"])
@@ -74,12 +74,12 @@ Download and save the app icon to disk:
     f = open("icon.png", "wb")
     f.write(data)
     f.close()
-    
+
 Get all the categories and subcategories:
 
     results = session.getCategories()
     pprint(results)
-    
+
 Prints:
 
     [{'apptype': 1L,
